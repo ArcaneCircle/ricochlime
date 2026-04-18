@@ -1,0 +1,49 @@
+name: Publish Webxdc
+
+on:
+  pull_request:
+    branches:
+      - master
+      - main
+  push:
+    branches:
+      - master
+      - main
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Setup Flutter
+        uses: adil192/setup-flutter-submodule@v1
+        with:
+          flutter-path: submodules/flutter
+
+      - name: Remove proprietary dependencies
+        run: ./patches/foss.sh
+      - run: flutter pub get
+
+      - name: Build web
+        run: flutter build web --no-pub --no-web-resources-cdn --release
+
+      - run: |
+          cd build/web/
+          rm canvaskit/*.symbols
+          rm -R canvaskit/wimp* canvaskit/skwasm* canvaskit/chromium
+          rm version.json .last_build_id
+          ./create-xdc.sh app
+          
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/v')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          body: |
+            Auto-generated release
+          prerelease: ${{ contains(github.event.ref, '-beta') }}
+          fail_on_unmatched_files: true
+          files: ./build/web/*.xdc
