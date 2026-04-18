@@ -32,9 +32,6 @@ jobs:
 
       - run: |
           cd build/web/
-          rm canvaskit/*.symbols
-          rm -R canvaskit/wimp* canvaskit/skwasm* canvaskit/chromium
-          rm version.json .last_build_id
           ./create-xdc.sh app
           
       - name: Release
