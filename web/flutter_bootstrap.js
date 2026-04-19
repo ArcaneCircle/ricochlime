@@ -5,9 +5,10 @@
 const loading = document.getElementById('loading');
 
 _flutter.loader.load({
-  renderer: "canvaskit",
   onEntrypointLoaded: async function(engineInitializer) {
-    const appRunner = await engineInitializer.initializeEngine();
+    const appRunner = await engineInitializer.initializeEngine({
+      canvasKitVariant: "full",
+    });
 
     // Remove the loading spinner when the app runner is ready
     loading.classList.add('loaded');
