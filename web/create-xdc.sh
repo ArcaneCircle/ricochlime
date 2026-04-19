@@ -16,7 +16,7 @@ esac
 rm "$PACKAGE_NAME.xdc" 2> /dev/null
 zip -9 --recurse-paths "$PACKAGE_NAME.xdc" --exclude \
     CNAME favicon.png version.json .last_build_id manifest.json \
-    '*/NOTICES' privacy_policy.html \
+    privacy_policy.html \
     'icons/Icon-maskable*' 'icons/Icon-512*' \
     'canvaskit/*.symbols' 'canvaskit/wimp*' 'canvaskit/skwasm*' 'canvaskit/chromium/*' \
     LICENSE README.md webxdc.js webxdc.d.ts "./*.sh" "./*.xdc" -- *
