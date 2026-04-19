@@ -32,7 +32,7 @@ jobs:
 
       - run: |
           cd build/web/
-          ./create-xdc.sh app
+          sh ./create-xdc.sh app
           
       - name: Release
         uses: softprops/action-gh-release@v2
