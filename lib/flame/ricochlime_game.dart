@@ -24,6 +24,7 @@ import 'package:ricochlime/utils/ricochlime_audio.dart';
 import 'package:ricochlime/utils/ricochlime_palette.dart';
 import 'package:ricochlime/utils/shop_items.dart';
 import 'package:ricochlime/utils/stows.dart';
+import 'package:ricochlime/utils/webxdc_highscores.dart';
 
 enum GameState { idle, shooting, monstersMoving, gameOver }
 
@@ -496,6 +497,7 @@ class RicochlimeGame extends Forge2DGame
   /// and clears the current game.
   void restartGame() {
     stows.highScore.value = max(stows.highScore.value, score.value);
+    highscores.setScore(score.value);
     stows.currentGame.value = null;
     _reset();
   }

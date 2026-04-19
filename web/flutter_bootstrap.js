@@ -11,6 +11,7 @@ _flutter.loader.load({
     // Remove the loading spinner when the app runner is ready
     loading.classList.add('loaded');
 
+    await window.highscores.init();
     await appRunner.runApp();
   }
 });

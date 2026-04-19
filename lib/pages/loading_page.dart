@@ -12,6 +12,7 @@ import 'package:ricochlime/i18n/strings.g.dart';
 import 'package:ricochlime/pages/home.dart';
 import 'package:ricochlime/utils/ricochlime_audio.dart';
 import 'package:ricochlime/utils/stows.dart';
+import 'package:ricochlime/utils/webxdc_highscores.dart';
 
 class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
@@ -107,6 +108,7 @@ class _LoadingPageState extends State<LoadingPage> {
           transitionDuration: const Duration(milliseconds: 200),
         ),
       );
+      stows.highScore.value = highscores.getScore();
       return;
     } else {
       setState(() {});
