@@ -23,8 +23,8 @@ class Stows {
   final bgmVolume = PlainStow('bgmVolume', 0.0);
   final sfxVolume = PlainStow('sfxVolume', 0.0);
 
-  final showUndoButton = PlainStow('showUndoButton', true);
-  final showReflectionInAimGuide = PlainStow('showReflectionInAimGuide', true);
+  final showUndoButton = PlainStow('showUndoButton', false);
+  final showReflectionInAimGuide = PlainStow('showReflectionInAimGuide', false);
 
   final coins = PlainStow('coins', 0);
   final bulletColor = PlainStow(

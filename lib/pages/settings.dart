@@ -114,6 +114,7 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
 
+          /*
           // Whether to show the undo button
           Padding(
             padding: listTilePadding,
@@ -176,6 +177,7 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
           ),
+          */
 
           // Max FPS
           Padding(
