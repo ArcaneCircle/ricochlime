@@ -1,5 +1,8 @@
 # <img src="assets/icon/icon.png" width="30" height="30" alt="" aria-hidden="true"> Ricochlime
 
+Webxdc port of [Ricochlime](https://github.com/adil192/ricochlime),
+original README follows:
+
 Ricochlime is a casual game for every platform where you defend yourself against waves of monsters with your ricocheting projectiles.
 
 I originally built this game as something to do with my hands while I focused on lectures during my computer science degree. It's designed as a calm, relaxed alternative to the fast-paced, high-stimulation games that dominate the app stores.
