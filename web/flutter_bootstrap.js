@@ -5,6 +5,10 @@
 const loading = document.getElementById('loading');
 
 _flutter.loader.load({
+  renderer: "canvaskit",
+  config: {
+    canvasKitVariant: "full", // avoid canvaskit/chromium/
+  },
   onEntrypointLoaded: async function(engineInitializer) {
     const appRunner = await engineInitializer.initializeEngine();
 
